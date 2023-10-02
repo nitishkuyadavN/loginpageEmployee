@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Employee List</h1>
+    <ul>
+        <li th:each="employee : ${employeeList}">
+            <a th:href="@{/employees/{id}(id=${employee.id})}" th:text="${employee.name}"></a>
+        </li>
+    </ul>
+</body>
+</html>
